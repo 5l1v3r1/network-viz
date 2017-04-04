@@ -1,0 +1,30 @@
+{
+  "name": "network-viz",
+  "version": "0.1.0",
+  "description": "A way to visualize the flow of network traffic over a period of time. ",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/lejolly/network-viz.git",
+  "keywords": [
+    "network",
+    "topology",
+    "charts",
+    "logs",
+    "transmission"
+  ],
+  "tags": [
+    "desktop",
+    "electron",
+    "bootstrap"
+  ],
+  "author": "Joshua Lee, James Ng, Yeo Te Ye, Tran Ly Vu",
+  "license": "CC0-1.0",
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    "electron": "^1.4.1"
+  }
+}

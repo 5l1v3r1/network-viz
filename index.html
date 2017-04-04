@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>network-viz</title>
+      
+    <link rel="stylesheet" href="includes/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="includes/bootstrap-slider.min.css"/>
+    <link rel="stylesheet" href="includes/jquery.qtip.min.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row full-height">
+        <div class="col-sm-8 full-height">
+          <div class="row panel-height">
+            <div class="panel panel-default">
+              <div class="panel-body full-height">
+                  <div id="cy"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row media-control">
+            <div class="col-sm-8">
+              <label type="button" class="btn btn-link" id="startButton"><span class="glyphicon glyphicon-fast-backward"></span></label>
+              <label type="button" class="btn btn-link" id="playPauseButton"><span id="playPauseIcon" class="glyphicon glyphicon-play"></span></label>
+              <label type="button" class="btn btn-link" id="endButton"><span class="glyphicon glyphicon-fast-forward"></span></label>
+              <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="87" data-slider-step="1" data-slider-value="0"/>
+              <br />
+              <span>Current time: <span id="currentTimeLabel">0</span></span>
+              <span>Current node: <span id="currentNodeLabel">0</span></span>
+            </div>
+            <div class="col-sm-4" style="padding-top: 10px">
+              Usage Load: 
+              <br />
+              <span><img class="img-responsive" src="images/usage_load.jpg"/></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 full-height scrollable-column">
+          <div class="row chart-height no-visibility">
+            <div class="well full-height" id="well1">
+              <canvas id="cpu-chart"></canvas>
+            </div>
+          </div>
+          <div class="row chart-height" id="placeholder-network">
+            <div class="well full-height" id="well2">
+              <canvas id="network-chart"></canvas>
+            </div>
+          </div>
+          <div class="row port-chart-height no-visibility" id="placeholder-row1">
+            <div class="well full-height" id="well3">
+              <canvas id="port-chart1"></canvas>
+            </div>
+          </div>
+          <div class="row port-chart-height no-visibility" id="placeholder-row2">
+            <div class="well full-height" id="well4">
+              <canvas id="port-chart2"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    // You can also require other files to run in this process
+    require('./js/renderer.js')
+  </script>
+    
+  <!--
+  References:
+  [1] http://stackoverflow.com/questions/32621988/electron-jquery-is-not-defined/37480521#37480521
+  -->
+  <!-- Insert this line above script imports  -->
+  <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+  
+  <!-- normal script imports etc  -->
+  <script src="includes/jquery-3.1.1.min.js"></script>
+  <script src="includes/jquery.qtip.min.js"></script>
+  <script src="includes/bootstrap/js/bootstrap.min.js"></script>
+  <script src="includes/bootstrap-slider.min.js"></script>
+  <script src="includes/cytoscape.min.js"></script>
+  <script src="includes/cytoscape-cose-bilkent.js"></script>
+  <script src="includes/cytoscape-qtip.js"></script>
+  <script src="includes/Chart.min.js"></script>
+  <script src="index.js"></script>
+  
+  <!-- Insert this line after script imports -->
+  <script>if (window.module) module = window.module;</script>
+</html>

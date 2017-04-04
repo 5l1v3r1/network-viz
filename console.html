@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Log Console</title>
+      
+    <style>
+      html, body { height: 100%; background-color: #000; }
+      #terminal-body {
+        background-color: #000;
+        color: #FFF;
+        font-family: monospace; line-height: 1em;
+        font-size: 11px;
+        line-height: 1.5em;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="terminal-body" style="overflow-wrap: break-word">Welcome to NCL Network Visualisation Tool!<br></div>
+  </body>
+    
+  <script>
+    const {ipcRenderer} = require('electron')
+    ipcRenderer.on('console', (event, arg) => {
+      document.getElementById('terminal-body').innerHTML += '[' + Date.now() + '] ' + arg + '<br>';
+    })
+  </script>
+</html>
